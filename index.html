@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 23 Exercises</title>
+    <link rel="stylesheet" type= "text/css" href= "./styles.css">
+    <script src= "./script.js">  </script>
+</head>
+<body>
+     <h1>Flight Simulator</h1>
+        <p id="statusReport">The shuttle is on the ground</p>
+        <button id = "liftoffButton">Take off</button>
+        <button id = "abortMission">Abort mission</button>
+        <script>
+            function launch(){
+                document.getElementById("statusReport").innerHTML = 'Houston! We have liftoff!'
+            }
+            let button = document.getElementById("liftoffButton")
+            button.addEventListener("click", launch);    
+
+            const missionAbort = document.getElementById("abortMission");
+            missionAbort.addEventListener("mouseover", function(){
+                missionAbort.style= "background-color: red"
+            })
+            missionAbort.addEventListener("mouseout", function(){
+                missionAbort.style= ""
+            })
+            missionAbort.addEventListener("click", function(){
+                window.alert("Are you sure you want to abort the mission?")
+                document.getElementById("statusReport").innerHTML= "Mission aborted! Space shuttle returning home." 
+            })
+
+
+        </script>
+        
+</body>
+</html>
